@@ -56,7 +56,4 @@ MouseHandler.prototype.reset = function(){
 let Mouse = new MouseHandler();
 
 /* 
-25:11
-35:04
-36:33
-*/
+35:04*/
