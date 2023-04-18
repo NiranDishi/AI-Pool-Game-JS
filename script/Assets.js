@@ -3,15 +3,20 @@
 var sprites = {};
 var sounds = {};
 
+// A function to load a sprite from a file path
+var loadSprite = function (sprite) {
+    return Game.loadSprite("assets/sprites/" + sprite);
+};
+
+// A function to load a sound from a file path
+var loadSound = function (sound) {
+    return new Audio("assets/sounds/" + sound);
+};
+
+// Load all of the game's assets
 Game.loadAssets = function () {
-    var loadSprite = function (sprite) {
-        return Game.loadSprite("assets/sprites/" + sprite);
-    };
 
-     var loadSound = function (sound) {
-        return new Audio("assets/sounds/" + sound);
-    };
-
+    // Load all of the game's sprites
     sprites.mainMenuBackground = loadSprite("main_menu_background.png");
     sprites.background = loadSprite("spr_background4.png");
     sprites.ball = loadSprite("spr_ball2.png");
@@ -43,18 +48,21 @@ Game.loadAssets = function () {
     sprites.aboutButtonHover = loadSprite("about_button_hover.png");
     sprites.controls = loadSprite("controls.png");
 
+    // Load all of the game's sounds
     sounds.side = loadSound("Side.wav");
     sounds.ballsCollide = loadSound("BallsCollide.wav");
     sounds.strike = loadSound("Strike.wav");
     sounds.hole = loadSound("Hole.wav");
-    
     sounds.jazzTune = loadSound("Bossa Antigua.mp3");
 }
 
+// A function to fade out a sound over time
 sounds.fadeOut = function(sound) {
 
+    // Set an interval to gradually decrease the sound's volume
     var fadeAudio = setInterval(function () {
 
+        // If the game has stopped, return without doing anything
         if(GAME_STOPPED)
             return;
 
@@ -62,6 +70,7 @@ sounds.fadeOut = function(sound) {
         if ((sound.volume >= 0.05)) {
             sound.volume -= 0.05;
         }
+        // Once the sound is completely faded out, pause it and clear the interval
         else{
             sound.pause();
             clearInterval(fadeAudio);
