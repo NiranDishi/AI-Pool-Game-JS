@@ -1,8 +1,15 @@
 
+// Generates an array of Label objects for a main menu with a header text and a copyright label.
+// Parameters:
+// - headerText: string - The text to be displayed as the header. Required.
+// Returns:
+// - Array of Label objects - An array of Label objects for the main menu with the header text and a copyright label.
 function generateMainMenuLabels(headerText){
 
+    // Create an array of Label objects
     let labels = [
 
+        // Header label
         new Label(
             headerText, 
             new Vector2(100,0),
@@ -12,6 +19,8 @@ function generateMainMenuLabels(headerText){
             "Bookman",
             "100px"
         ),
+
+        // Copyright label
         new Label(
             "© Aviya and Niran", 
             new Vector2(1250,700),
@@ -23,19 +32,15 @@ function generateMainMenuLabels(headerText){
         )
     ];
 
-
+    // Return the array of Label objects
     return labels;
 }
 
 
+// Main Menu - Player vs Computer Mode
 function generateMainMenuButtons(inGame){
-
-
-
     let buttons = [];
-
     let dev = 0;
-
     if(inGame){
         dev = 200;
         buttons.push(
