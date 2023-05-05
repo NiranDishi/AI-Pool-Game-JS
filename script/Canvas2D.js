@@ -165,5 +165,35 @@ Canvas2D_Singleton.prototype.drawText = function (text, position, origin, color,
     this._canvasContext.restore();
 };
 
+Canvas2D_Singleton.prototype.drawLine = function (startPos, endPos, lineWidth=2, strokeStyle ="#FFFFFF") {
+    // Save the current context settings
+    this._canvasContext.save();
+
+    // Get the current canvas scale
+    var canvasScale = this.scale;
+
+    // Scale the canvas by the current scale
+    this._canvasContext.scale(canvasScale.x, canvasScale.y);
+
+    // Set the line width and stroke style
+    this._canvasContext.lineWidth = lineWidth;
+    this._canvasContext.strokeStyle = strokeStyle;
+
+    // Move the context to the starting position
+    this._canvasContext.moveTo(startPos.x, startPos.y);
+
+    // Draw a line to the end position
+    this._canvasContext.beginPath();
+    this._canvasContext.moveTo(startPos.x, startPos.y);
+    this._canvasContext.lineTo(endPos.x, endPos.y);
+    this._canvasContext.stroke();
+
+    // Stroke the line
+    this._canvasContext.stroke();
+
+    // Restore the saved context settings
+    this._canvasContext.restore();
+};
+
 // Creates a new instance of the Canvas2D_Singleton object and assigns it to the variable Canvas2D
 var Canvas2D = new Canvas2D_Singleton();

@@ -112,4 +112,26 @@ Stick.prototype.draw = function () {
 
   // Draw stick image on canvas
   Canvas2D.drawImage(sprites.stick, this.position, this.rotation, 1, this.origin);
+  if (!Mouse.left.down && !Game.gameWorld.whiteBall.moving){
+    console.log("path")
+    
+    // Get the predicted ball path vector
+    var predictedPath = new Vector2(Game.gameWorld.whiteBall.position.x, Game.gameWorld.whiteBall.position.y);
+    var directionVector = new Vector2(Math.cos(this.rotation), Math.sin(this.rotation));
+    var velocityVector = directionVector.multiply(this.power);
+    var velocity = Math.sqrt(Math.pow(velocityVector.x, 2) + Math.pow(velocityVector.y, 2));
+    var time = 0;
+    var deltaT = 0.03;
+    var friction = 0.05;
+    while(velocity > 0){
+      predictedPath = predictedPath.add(velocityVector.multiply(deltaT));
+      velocity -= friction;
+      velocityVector = directionVector.multiply(velocity);
+      time += deltaT;
+    }
+
+    // Draw the predicted ball path vector on the canvas
+    Canvas2D.drawLine(Game.gameWorld.whiteBall.position, predictedPath);
+
+  }
 };
