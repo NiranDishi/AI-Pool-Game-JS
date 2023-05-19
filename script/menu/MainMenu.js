@@ -12,7 +12,7 @@ function generateMainMenuLabels(headerText){
         // Header label
         new Label(
             headerText, 
-            new Vector2(100,0),
+            new Vector2(100,30),
             Vector2.zero,
             "white",
             "left",
@@ -23,7 +23,7 @@ function generateMainMenuLabels(headerText){
         // Copyright label
         new Label(
             "© Aviya and Niran", 
-            new Vector2(1250,700),
+            new Vector2(1300,800),
             Vector2.zero,
             "white",
             "left",
