@@ -54,7 +54,7 @@ GamePolicy.prototype.reset = function(){
  * Function to draw scores of players on the canvas.
  */
 GamePolicy.prototype.drawScores = function(){
-    Canvas2D.drawText("PLAYER " + (this.turn+1), new Vector2(Game.size.x/2 + 40,200), new Vector2(150,0), "#096834", "top", "Impact", "70px");
+    Canvas2D.drawText("PLAYER " + (this.turn+1), new Vector2(Game.size.x/2 + 40,200), new Vector2(150,0), "#66CCFF", "top", "Impact", "70px");
     this.players[0].totalScore.draw();
     this.players[1].totalScore.draw();
 
@@ -346,7 +346,10 @@ GamePolicy.prototype.initiateState = function(policyState){
 
     this.players[0].matchScore.value = policyState.players[0].matchScore.value; // Set match score for player 1
     this.players[0].color = policyState.players[0].color; // Set color for player 1
-    this.players[1].matchScore.value = policyState.players[1].matchScore.value; // Set match score for player 2
+    this.players[1].matchScore.value = policyState.players[1].matchScore.value; // Set match score for  2
     this.players[1].color = policyState.players[1].color; // Set color for player 2
 
 }
+
+
+  

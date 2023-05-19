@@ -106,7 +106,7 @@ function generateMainMenuButtons(inGame){
     buttons = buttons.concat([
         new Button
         (
-            // PLAYER vs PLAYER
+            //  vs PLAYER
             sprites.twoPlayersButton, 
             new Vector2(200,dev+200),
             function(){

@@ -113,7 +113,6 @@ Stick.prototype.draw = function () {
   // Draw stick image on canvas
   Canvas2D.drawImage(sprites.stick, this.position, this.rotation, 1, this.origin);
   if (!Mouse.left.down && !Game.gameWorld.whiteBall.moving){
-    console.log("path")
     
     // Get the predicted ball path vector
     var predictedPath = new Vector2(Game.gameWorld.whiteBall.position.x, Game.gameWorld.whiteBall.position.y);

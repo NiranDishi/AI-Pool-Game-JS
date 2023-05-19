@@ -194,6 +194,28 @@ Canvas2D_Singleton.prototype.drawLine = function (startPos, endPos, lineWidth=2,
     // Restore the saved context settings
     this._canvasContext.restore();
 };
+Canvas2D_Singleton.prototype.drawInstructions = function (instructions) {
+    // Set the properties for the instructions
+    var position = new Vector2(10, 10); // Position of the instructions on the canvas
+    var backgroundColor = "red"; // Background color for the instructions
+    var textColor = "white"; // Text color for the instructions
+    var fontname = "Arial"; // Font name of the instructions text
+    var fontsize = "16px"; // Font size of the instructions text
+
+    // Calculate the dimensions of the background rectangle based on the text size
+    var textWidth = this._canvasContext.measureText(instructions).width;
+    var textHeight = parseInt(fontsize, 10); // Assuming a single line of text
+
+    // Draw the background rectangle
+    this._canvasContext.fillStyle = backgroundColor;
+    this._canvasContext.fillRect(position.x, position.y, textWidth, textHeight);
+
+    // Draw the instructions text on top of the background
+    this.drawText(instructions, position, Vector2.zero, textColor, "left", fontname, fontsize);
+};
+
+
+
 
 // Creates a new instance of the Canvas2D_Singleton object and assigns it to the variable Canvas2D
 var Canvas2D = new Canvas2D_Singleton();

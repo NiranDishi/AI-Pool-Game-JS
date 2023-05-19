@@ -27,7 +27,7 @@ Score.prototype.draw = function () {
         this.value,
         this.position,
         this.origin,
-        "#096834",
+        "#66CCFF",
         "top",
         "Impact",
         "200px"
