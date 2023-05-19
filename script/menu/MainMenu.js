@@ -99,6 +99,7 @@ function generateMainMenuButtons(inGame){
         function(){
             Game.mainMenu.labels = generateMainMenuLabels("Classic 8-Ball");
             Game.mainMenu.buttons = generateMainMenuButtons(inGame);
+            Game.mainMenu.background = sprites.mainMenuBackground;
         },
         sprites.backButtonHover
     );
@@ -198,6 +199,24 @@ function generateMainMenuButtons(inGame){
                 ];
             },
             sprites.onePlayersButtonHover
+        ),        new Button
+        (
+            // Instructions
+            sprites.beginnerButton, 
+            new Vector2(200,dev+600),
+            function(){
+                Game.mainMenu.labels = generateMainMenuLabels("");
+
+                Mouse.reset();
+                Game.mainMenu.background=sprites.instructions;
+                Game.mainMenu.buttons = [
+
+                    muteButton,
+                    backButton
+
+                ];
+            },
+            sprites.beginnerButtonHover
         ),
         muteButton
     ]);

@@ -12,7 +12,9 @@ AITrainer.prototype.init = function(state, gamePolicy){
     AI.currentOpponent = new Opponent();
     AI.finishedSession = true;
     AI.iteration = 0;
-
+    AI.bestOpponentIndex = 0;
+    AI.bestOpponentEval = 0;
+    
     // Set the white ball to a fixed position if there was a foul in the previous turn.
     if(gamePolicy.foul){
         //TO DO: Pick best position for the white ball.
