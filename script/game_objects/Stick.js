@@ -12,7 +12,7 @@ function Stick(position){
     this.rotation = 0;
     this.power = 0;
     this.trackMouse = true;
-    this.beginnerMode = Game.mainMenu.beginnerMode;
+    this.beginnerMode = Game.beginnerMode;
 }
 
 // Handle input method for the Stick class

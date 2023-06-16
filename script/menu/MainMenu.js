@@ -94,7 +94,10 @@ function generateMainMenuButtons(inGame){
 
     let beginnerModeSprite = sprites.beginnerModeSwitchOff;
 
-    if(Game.mainMenu.sound && Game.mainMenu.sound.volume === 0){
+    if(Game.beginnerMode ){
+        beginnerModeSprite = sprites.beginnerModeSwitchOn;
+    }
+    else{
         beginnerModeSprite = sprites.beginnerModeSwitchOff;
     }
 
@@ -106,13 +109,13 @@ function generateMainMenuButtons(inGame){
         new Vector2(1250,10),
         function(){
             if(beginnerModeSprite == sprites.beginnerModeSwitchOff){
-                    Game.mainMenu.beginnerMode=true;
+                    Game.beginnerMode=true;
                     this.sprite = sprites.beginnerModeSwitchOn;
                     this.hoverSprite=sprites.beginnerModeSwitchOn;
                     beginnerModeSprite = sprites.beginnerModeSwitchOn;
             }
             else{
-                    Game.mainMenu.beginnerMode=false;
+                    Game.beginnerMode=false;
                     this.sprite = sprites.beginnerModeSwitchOff;
                     this.hoverSprite = sprites.beginnerModeSwitchOff;
                     beginnerModeSprite = sprites.beginnerModeSwitchOff;
@@ -139,7 +142,7 @@ function generateMainMenuButtons(inGame){
         (
             //  vs PLAYER
             sprites.twoPlayersButton, 
-            new Vector2(200,dev+200),
+            new Vector2(200,dev+150),
             function(){
                 AI_ON = false;
                 Game.mainMenu.active = false;
@@ -153,7 +156,7 @@ function generateMainMenuButtons(inGame){
         (
             // PLAYER vs COMPUTER
             sprites.onePlayersButton, 
-            new Vector2(200,dev+400),
+            new Vector2(200,dev+300),
             function(){
                 Game.mainMenu.labels = generateMainMenuLabels("Choose Difficulty");
 
@@ -234,7 +237,7 @@ function generateMainMenuButtons(inGame){
         (
             // Instructions
             sprites.beginnerButton, 
-            new Vector2(200,dev+600),
+            new Vector2(200,dev+450),
             function(){
                 Game.mainMenu.labels = generateMainMenuLabels("");
 
