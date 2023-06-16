@@ -53,7 +53,7 @@ function GameWorld() {
 
     // Create the stick object with its starting position
     this.stick = new Stick({ x : 413, y : 413 });
-    Canvas2D.drawInstructions("Hello");
+ 
 
     // Set initial game over state as false
     this.gameOver = false;
