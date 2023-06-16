@@ -137,7 +137,7 @@ function generateMainMenuButtons(inGame){
                         function(){
                             AI_PLAYER_NUM = 1;
                             AI_ON = true;
-                            TRAIN_ITER = 30;
+                            TRAIN_ITER = 10;
                             Game.mainMenu.active = false;
                             GAME_STOPPED = false;
                             setTimeout(Game.startNewGame,200);
@@ -153,7 +153,7 @@ function generateMainMenuButtons(inGame){
                         function(){
                             AI_PLAYER_NUM = 1;
                             AI_ON = true;
-                            TRAIN_ITER = 50;
+                            TRAIN_ITER = 30;
                             Game.mainMenu.active = false;
                             GAME_STOPPED = false;
                             setTimeout(Game.startNewGame,200);
@@ -169,7 +169,7 @@ function generateMainMenuButtons(inGame){
                         function(){
                             AI_PLAYER_NUM = 1;
                             AI_ON = true;
-                            TRAIN_ITER = 100;
+                            TRAIN_ITER = 50;
                             Game.mainMenu.active = false;
                             GAME_STOPPED = false;
                             setTimeout(Game.startNewGame,200);
