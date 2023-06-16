@@ -18,6 +18,7 @@ function Game_Singleton() {
     this.spritesStillLoading = 0;
     this.gameWorld = undefined;
     this.sound = true;
+    this.beginnerMode = false;
 
     // This creates a new Menu object for the main menu.
     this.mainMenu = new Menu();

@@ -50,6 +50,8 @@ Game.loadAssets = function () {
     sprites.instructions = loadSprite("Instructions.png");
     sprites.beginnerButton = loadSprite("beginner_button.png");
     sprites.beginnerButtonHover = loadSprite("beginner_button_hover.png");
+    sprites.beginnerModeSwitchOff = loadSprite("switch-off.png");
+    sprites.beginnerModeSwitchOn = loadSprite("switch-on.png");
 
     // Load all of the game's sounds
     sounds.side = loadSound("Side.wav");

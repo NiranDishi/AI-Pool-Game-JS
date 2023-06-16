@@ -1,5 +1,7 @@
 "use strict";
 
+
+
 // Stick class constructor
 function Stick(position){
     this.position = position;
@@ -10,6 +12,7 @@ function Stick(position){
     this.rotation = 0;
     this.power = 0;
     this.trackMouse = true;
+    this.beginnerMode = Game.mainMenu.beginnerMode;
 }
 
 // Handle input method for the Stick class
@@ -112,7 +115,7 @@ Stick.prototype.draw = function () {
 
   // Draw stick image on canvas
   Canvas2D.drawImage(sprites.stick, this.position, this.rotation, 1, this.origin);
-  if (!Mouse.left.down && !Game.gameWorld.whiteBall.moving){
+  if (!Mouse.left.down && !Game.gameWorld.whiteBall.moving && this.beginnerMode){
     
     // Get the predicted ball path vector
     var predictedPath = new Vector2(Game.gameWorld.whiteBall.position.x, Game.gameWorld.whiteBall.position.y);

@@ -91,6 +91,36 @@ function generateMainMenuButtons(inGame){
         muteSpriteHover
     );
 
+
+    let beginnerModeSprite = sprites.beginnerModeSwitchOff;
+
+    if(Game.mainMenu.sound && Game.mainMenu.sound.volume === 0){
+        beginnerModeSprite = sprites.beginnerModeSwitchOff;
+    }
+
+
+    let beginnerModeButton = new Button
+    (
+        // BEGGINER MODE BUTTON
+        beginnerModeSprite, 
+        new Vector2(1250,10),
+        function(){
+            if(beginnerModeSprite == sprites.beginnerModeSwitchOff){
+                    Game.mainMenu.beginnerMode=true;
+                    this.sprite = sprites.beginnerModeSwitchOn;
+                    this.hoverSprite=sprites.beginnerModeSwitchOn;
+                    beginnerModeSprite = sprites.beginnerModeSwitchOn;
+            }
+            else{
+                    Game.mainMenu.beginnerMode=false;
+                    this.sprite = sprites.beginnerModeSwitchOff;
+                    this.hoverSprite = sprites.beginnerModeSwitchOff;
+                    beginnerModeSprite = sprites.beginnerModeSwitchOff;
+
+            }
+        },beginnerModeSprite
+    );
+
     let backButton = new Button
     (
         //BACK
@@ -194,7 +224,8 @@ function generateMainMenuButtons(inGame){
                         sprites.insaneButtonHover
                     ),
                     muteButton,
-                    backButton
+                    backButton,
+                    beginnerModeButton
 
                 ];
             },
@@ -213,12 +244,14 @@ function generateMainMenuButtons(inGame){
 
                     muteButton,
                     backButton
+                    
 
                 ];
             },
             sprites.beginnerButtonHover
         ),
-        muteButton
+        muteButton,
+        beginnerModeButton
     ]);
 
     return buttons;
