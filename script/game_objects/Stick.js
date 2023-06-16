@@ -115,6 +115,7 @@ Stick.prototype.draw = function () {
 
   // Draw stick image on canvas
   Canvas2D.drawImage(sprites.stick, this.position, this.rotation, 1, this.origin);
+  this.beginnerMode = Game.beginnerMode;
   if (!Mouse.left.down && !Game.gameWorld.whiteBall.moving && this.beginnerMode){
     
     // Get the predicted ball path vector
